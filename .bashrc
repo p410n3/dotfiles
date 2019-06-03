@@ -118,3 +118,6 @@ fi
 alias off='sudo shutdown -h now'
 alias ddg='w3m duck.com'
 alias sysinfo='acpi; date'
+# better nano for coding
+alias nano='nano -S -i -O -x'
+
