@@ -5,8 +5,8 @@ while [ 1 ];  do
   _battery=`acpi | grep -o '...%'`
 
   # Time
-  _time=`date | grep -o '..:..:..'`
+  _time=`date +'%R'`
 
   xsetroot -name "$_battery | $_time"
-  sleep 0.1;
+  sleep 1m;
 done
