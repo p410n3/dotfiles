@@ -3,6 +3,7 @@ inoremap jk <Esc>
 inoremap <C-o> <C-x><C-o>
 set tabstop=4
 set shiftwidth=4
+set expandtab
 " Line numberings
 set nu rnu
 " Disable preview window
