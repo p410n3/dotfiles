@@ -8,4 +8,9 @@ set expandtab
 set nu rnu
 " Disable preview window
 set completeopt-=preview
-colorscheme happy_hacking
+colorscheme molokai
+
+" Plugins
+call plug#begin('~/.config/nvim/plugged')
+    Plug 'mattn/emmet-vim'
+call plug#end()
