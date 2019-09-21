@@ -8,6 +8,8 @@ set expandtab
 set nu rnu
 " Disable preview window
 set completeopt-=preview
+" Improve complete window
+set completeopt=longest,menuone
 colorscheme molokai
 
 " Plugins
