@@ -13,4 +13,5 @@ colorscheme molokai
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
     Plug 'mattn/emmet-vim'
+    Plug 'vim-airline/vim-airline'
 call plug#end()
