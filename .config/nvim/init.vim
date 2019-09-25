@@ -5,6 +5,8 @@ set shiftwidth=4
 set expandtab
 " Line numberings
 set nu rnu
+" Ctrl O for Omni Completion
+inoremap <C-o> <C-x><C-o>
 " Disable preview window
 set completeopt-=preview
 " Improve complete window
