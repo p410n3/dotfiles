@@ -15,6 +15,11 @@ set completeopt=longest,menuone
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " I lyke colorz
 colorscheme molokai
+" Tags example
+" Create tags in current folder:
+" ctags -R --languages=php -f xenforo /var/www/html/src/XF
+" Add tags to env
+" set tags+=~/.config/nvim/tags/xenforo
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
