@@ -11,8 +11,6 @@ inoremap <C-o> <C-x><C-o>
 set completeopt-=preview
 " Improve complete window
 set completeopt=longest,menuone
-" Let supertab use Omni by default
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " I lyke colorz
 colorscheme molokai
 " Tags example
