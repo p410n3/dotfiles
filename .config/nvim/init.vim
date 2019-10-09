@@ -11,13 +11,12 @@ inoremap <C-o> <C-x><C-o>
 set completeopt-=preview
 " Improve complete window
 set completeopt=longest,menuone
+" Use x11 clipboard
+set clipboard=unnamedplus 
 " I lyke colorz
 colorscheme molokai
-" Tags example
-" Create tags in current folder:
-" ctags -R --languages=php -f xenforo /var/www/html/src/XF
-" Add tags to env
-" set tags+=~/.config/nvim/tags/xenforo
+" Tags
+set tags+=~/.config/nvim/tags/xenforo
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
