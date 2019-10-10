@@ -24,6 +24,11 @@ set clipboard=unnamedplus
 " I lyke colorz
 colorscheme molokai
 
+" NetRW settings
+let g:netrw_banner = 0
+" New files in new tab
+let g:netrw_browse_split = 3
+
 " Tags example
 " Create tags in current folder:
 " ctags -R --languages=php -f xenforo /var/www/html/src/XF
