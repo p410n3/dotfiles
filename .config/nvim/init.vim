@@ -24,6 +24,9 @@ set clipboard=unnamedplus
 " I lyke colorz
 colorscheme molokai
 
+" Wrap long lines properly
+set nolist wrap linebreak breakat&vim
+
 " NetRW settings
 let g:netrw_banner = 0
 
