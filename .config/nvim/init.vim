@@ -23,6 +23,7 @@ set clipboard=unnamedplus
 
 " I lyke colorz
 colorscheme darcula
+let g:airline_theme='minimalist'
 
 " Wrap long lines properly
 set nolist wrap linebreak breakat&vim
@@ -36,11 +37,12 @@ let g:netrw_banner = 0
 " Add tags to env
 " set tags+=~/.config/nvim/tags/xenforo
 " Tags
-set tags+=~/.config/nvim/tags/xenforo
+" set tags+=~/.config/nvim/tags/xenforo
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
     Plug 'mattn/emmet-vim'
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'ervandew/supertab'
 call plug#end()
