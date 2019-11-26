@@ -30,9 +30,6 @@ set nolist wrap linebreak breakat&vim
 " NetRW settings
 let g:netrw_banner = 0
 
-"SuperTab shall use Omni for better completion
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 " Tags example
 " Create tags in current folder:
 " ctags -R --languages=php -f xenforo /var/www/html/src/XF
