@@ -22,7 +22,7 @@ set completeopt=longest,menuone
 set clipboard=unnamedplus 
 
 " I lyke colorz
-colorscheme molokai
+colorscheme darcula
 
 " Wrap long lines properly
 set nolist wrap linebreak breakat&vim
