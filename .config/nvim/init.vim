@@ -30,3 +30,6 @@ set nolist wrap linebreak breakat&vim
 
 " NetRW settings
 let g:netrw_banner = 0
+
+" Cooler looking popupmenu
+highlight Pmenu ctermbg=235 ctermfg=231
