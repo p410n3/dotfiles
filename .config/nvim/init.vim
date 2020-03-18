@@ -1,5 +1,9 @@
-" Rebind esc to jk for convinience
+" Bind esc to jk for convinience
 inoremap jk <Esc>
+
+" Control Arrows for Tabs
+map <C-Right> :tabnext<CR>
+map <C-Left> :tabprevious<CR>
 
 " 1 tab = 4 spaces
 set tabstop=4
@@ -12,8 +16,8 @@ set nu rnu
 " Ctrl O for Omni Completion
 inoremap <C-o> <C-x><C-o>
 
-" Disable preview window
-set completeopt-=preview
+" Ctrl F for File Completion
+inoremap <C-f> <C-x><C-f>
 
 " Improve complete window
 set completeopt=longest,menuone
@@ -21,28 +25,8 @@ set completeopt=longest,menuone
 " Use x11 clipboard
 set clipboard=unnamedplus 
 
-" I lyke colorz
-colorscheme darcula
-let g:airline_theme='minimalist'
-
 " Wrap long lines properly
 set nolist wrap linebreak breakat&vim
 
 " NetRW settings
 let g:netrw_banner = 0
-
-" Tags example
-" Create tags in current folder:
-" ctags -R --languages=php -f xenforo /var/www/html/src/XF
-" Add tags to env
-" set tags+=~/.config/nvim/tags/xenforo
-" Tags
-" set tags+=~/.config/nvim/tags/xenforo
-
-" Plugins
-call plug#begin('~/.config/nvim/plugged')
-    Plug 'mattn/emmet-vim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'ervandew/supertab'
-call plug#end()
