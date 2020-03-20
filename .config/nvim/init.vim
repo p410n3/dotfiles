@@ -13,6 +13,9 @@ set expandtab
 " Line numberings
 set nu rnu
 
+" Crtl space is more comfy than Ctrl n
+inoremap <C-space> <C-n>
+
 " Ctrl O for Omni Completion
 inoremap <C-o> <C-x><C-o>
 
