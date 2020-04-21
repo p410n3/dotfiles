@@ -35,4 +35,11 @@ set nolist wrap linebreak breakat&vim
 let g:netrw_banner = 0
 
 " Cooler looking popupmenu
-highlight Pmenu ctermbg=235 ctermfg=231
+highlight Pmenu ctermbg=235 ctermfg=231 
+
+" Highlight the current line so I dont lose sight of it
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=235
+
+" Set the whole ctermbg slightly darker
+highlight Normal ctermbg=234
