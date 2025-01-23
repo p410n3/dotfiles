@@ -1,0 +1,62 @@
+" Bind esc to jk for convinience
+inoremap jk <Esc>
+
+" Control Arrows for Tabs
+map <C-Right> :tabnext<CR>
+map <C-Left> :tabprevious<CR>
+
+" 1 tab = 4 spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Line numberings
+set nu rnu
+
+" Crtl space is more comfy than Ctrl n
+inoremap <C-space> <C-n>
+
+" Ctrl O for Omni Completion
+inoremap <C-o> <C-x><C-o>
+
+" Ctrl F for File Completion
+" inoremap <C-f> <C-x><C-f>
+
+" Improve complete window
+set completeopt=longest,menuone
+
+" Use x11 clipboard
+" set clipboard=unnamedplus 
+
+" Wrap long lines properly
+set nolist wrap linebreak breakat&vim
+
+" NetRW settings
+let g:netrw_banner = 0
+
+" Cooler looking popupmenu
+highlight Pmenu ctermbg=235 ctermfg=231 
+
+" Highlight the current line so I dont lose sight of it
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=235
+
+" Set the whole ctermbg slightly darker
+highlight Normal ctermbg=234
+
+" FZF
+call plug#begin()
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+call plug#end()
+
+nnoremap <C-f> :Files<Cr>
+
+"" Some adjustments only for gVim on windows
+" no sound
+set belloff=all
+colorscheme slate
+set guifont=Lucida_Console:h12:cANSI:qDRAFT 
+syntax on
+set backspace=indent,eol,start
+set smartindent
