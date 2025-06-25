@@ -16,10 +16,10 @@ set ignorecase
 " Split below
 set splitbelow
 
-" Crtl space is more comfy than Ctrl n
-inoremap <C-space> <C-n>
+" Crtl Space for Keyword Completion
+" inoremap <C-Space> <C-x><C-n>
 
-" Ctrl O for Omni Completion
+" Crtl O for Omni
 inoremap <C-o> <C-x><C-o>
 
 set completeopt=longest,menuone
@@ -50,8 +50,17 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
 call plug#end()
 
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-u': { f -> f->map({->substitute(v:val, '\.php$', ';', 'g') })->map({->substitute(v:val, '^src\/', 'use ', 'g') })->map({->substitute(v:val, '\/', '\', 'g') })->join("\n")->setreg('+') }}
+
 " Ctrl F for FZF
 map <C-f> :Files<CR>
 
 " Ctrl A for FZF-AG
 map <C-a> :Ag<CR>
+
+" Ctrl C for Commits in Buffer
+map <C-b> :BCommits<CR>
