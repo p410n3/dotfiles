@@ -121,3 +121,7 @@ alias sysinfo='acpi; date'
 # better nano for coding
 alias nano='nano -S -i -O -x -A --tabsize 2'
 
+# For when using keychain
+# Keychain
+# /usr/bin/keychain $HOME/.ssh/id_rsa
+# source $HOME/.keychain/$HOSTNAME-sh
