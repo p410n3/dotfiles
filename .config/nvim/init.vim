@@ -22,6 +22,12 @@ set splitbelow
 " Crtl O for Omni
 inoremap <C-o> <C-x><C-o>
 
+" Rebind Tag thingie
+nnoremap <c-G> <c-]>
+
+" Exclude tags from complete
+set complete-=t
+
 set completeopt=longest,menuone
 
 " Use x11 clipboard
@@ -48,13 +54,9 @@ call plug#begin()
     Plug 'junegunn/fzf'
     " fzf.vim
     Plug 'junegunn/fzf.vim'
+    " Copilot
+    Plug 'github/copilot.vim'
 call plug#end()
-
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit',
-  \ 'ctrl-u': { f -> f->map({->substitute(v:val, '\.php$', ';', 'g') })->map({->substitute(v:val, '^src\/', 'use ', 'g') })->map({->substitute(v:val, '\/', '\', 'g') })->join("\n")->setreg('+') }}
 
 " Ctrl F for FZF
 map <C-f> :Files<CR>
@@ -64,3 +66,10 @@ map <C-a> :Ag<CR>
 
 " Ctrl C for Commits in Buffer
 map <C-b> :BCommits<CR>
+
+" Load the PHP use helper module
+lua require('php_use_helper')
+nnoremap <silent> <C-u> :lua require('php_use_helper').find_and_insert_use_statement()<CR>
+
+" Disable Copilot by default
+let g:copilot_enabled = 0
