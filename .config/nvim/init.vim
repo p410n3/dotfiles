@@ -67,9 +67,12 @@ map <C-a> :Ag<CR>
 " Ctrl C for Commits in Buffer
 map <C-b> :BCommits<CR>
 
-" Load the PHP use helper module
+" Load the PHP helpers
 lua require('php_use_helper')
 nnoremap <silent> <C-u> :lua require('php_use_helper').find_and_insert_use_statement()<CR>
+
+lua require('php_expand_classnames_helper')
+nnoremap <silent> <C-e> :lua require('php_expand_classnames_helper').expand_classnames_helper()<CR>
 
 " Disable Copilot by default
 let g:copilot_enabled = 0
