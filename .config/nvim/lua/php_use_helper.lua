@@ -34,7 +34,7 @@ function M.find_and_insert_use_statement()
     local cmd_parts = {}
 
     -- Use find to find files by name.
-    table.insert(cmd_parts, "find")
+    table.insert(cmd_parts, "find -L")
     table.insert(cmd_parts, vim.fn.shellescape(search_dir))
     table.insert(cmd_parts, "-iname")
     table.insert(cmd_parts, vim.fn.shellescape(filename))
@@ -89,8 +89,16 @@ function M.find_and_insert_use_statement()
         use_statement = use_statement:gsub("^vendor/spryker/.*/src/", "")
         use_statement = use_statement:gsub("^src/", "")
 
+        -- Shopware specific Stuff too :-)
+        -- Assume we just symlinked vendor in whatever git root we are in - because why not
+        use_statement = use_statement:gsub("^vendor/shopware/core", "Shopware/Core")
+        use_statement = use_statement:gsub("^vendor/shopware/storefront", "Shopware/Storefront")
+
         -- Replace forward slashes with backslashes to form a PHP namespace.
         use_statement = use_statement:gsub("/", "\\")
+
+        -- Get rid of trailing ".php"
+        use_statement = use_statement:gsub(".php$", "")
 
         -- Get current buffer content to determine the optimal insertion point.
         local current_buf = vim.api.nvim_get_current_buf()
@@ -148,7 +156,6 @@ function M.find_and_insert_use_statement()
 
         -- Insert the new line(s) into the buffer at the determined position.
         vim.api.nvim_buf_set_lines(current_buf, insert_at_line, insert_at_line, false, lines_to_insert)
-        print("\nNeovim PHP Use: Inserted 'use " .. use_statement .. ";'")
     end)
 end
 
