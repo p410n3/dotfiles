@@ -23,7 +23,7 @@ set splitbelow
 inoremap <C-o> <C-x><C-o>
 
 " Rebind Tag thingie
-nnoremap <c-G> <c-]>
+nnoremap <c-G> g]
 
 " Exclude tags from complete
 set complete-=t
