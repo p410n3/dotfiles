@@ -56,8 +56,6 @@ call plug#begin()
     Plug 'junegunn/fzf'
     " fzf.vim
     Plug 'junegunn/fzf.vim'
-    " fugitive
-    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Ctrl F for FZF
