@@ -39,6 +39,9 @@ set nolist wrap linebreak breakat&vim
 " NetRW settings
 let g:netrw_banner = 0
 
+" Set filetype=html for .twig files
+autocmd BufNewFile,BufRead *.twig set filetype=html
+
 " Cooler looking popupmenu
 highlight Pmenu ctermbg=235 ctermfg=231 
 
@@ -54,8 +57,6 @@ call plug#begin()
     Plug 'junegunn/fzf'
     " fzf.vim
     Plug 'junegunn/fzf.vim'
-    " Copilot
-    Plug 'github/copilot.vim'
 call plug#end()
 
 " Ctrl F for FZF
@@ -63,6 +64,8 @@ map <C-f> :Files<CR>
 
 " Ctrl A for FZF-AG
 map <C-a> :Ag<CR>
+" Make FZF-AG use the 'follow' option by default
+let g:fzf_ag_follow = 1
 
 " Ctrl C for Commits in Buffer
 map <C-b> :BCommits<CR>
@@ -73,6 +76,3 @@ nnoremap <silent> <C-u> :lua require('php_use_helper').find_and_insert_use_state
 
 lua require('php_expand_classnames_helper')
 nnoremap <silent> <C-e> :lua require('php_expand_classnames_helper').expand_classnames_helper()<CR>
-
-" Disable Copilot by default
-let g:copilot_enabled = 0
