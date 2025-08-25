@@ -16,18 +16,17 @@ set ignorecase
 " Split below
 set splitbelow
 
-" Crtl Space for Keyword Completion
-" inoremap <C-Space> <C-x><C-n>
-
-" Crtl O for Omni
-inoremap <C-o> <C-x><C-o>
-
 " Rebind Tag thingie
 nnoremap <c-G> g]
 
 " Exclude tags from complete
 set complete-=t
 
+" Make vim treat a hyphen like a regular word character - makes autocomplete
+" for CSS much easier
+set iskeyword+=-
+
+" Some autocomplete options - i forgot what they do
 set completeopt=longest,menuone
 
 " Use x11 clipboard
@@ -57,6 +56,8 @@ call plug#begin()
     Plug 'junegunn/fzf'
     " fzf.vim
     Plug 'junegunn/fzf.vim'
+    " fugitive
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Ctrl F for FZF
@@ -70,7 +71,7 @@ let g:fzf_ag_follow = 1
 " Ctrl C for Commits in Buffer
 map <C-b> :BCommits<CR>
 
-" Load the PHP helpers
+" Load PHP helpers
 lua require('php_use_helper')
 nnoremap <silent> <C-u> :lua require('php_use_helper').find_and_insert_use_statement()<CR>
 
