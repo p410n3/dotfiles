@@ -19,6 +19,9 @@ set splitbelow
 " Rebind Tag thingie
 nnoremap <c-G> g]
 
+" Quicker omni complete
+inoremap <C-o> <C-x><C-o>
+
 " Exclude tags from complete
 set complete-=t
 
@@ -56,6 +59,8 @@ call plug#begin()
     Plug 'junegunn/fzf'
     " fzf.vim
     Plug 'junegunn/fzf.vim'
+    " Fugitve
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Ctrl F for FZF
@@ -66,8 +71,11 @@ map <C-a> :Ag<CR>
 " Make FZF-AG use the 'follow' option by default
 let g:fzf_ag_follow = 1
 
-" Ctrl C for Commits in Buffer
+" Ctrl B for Commits in Buffer
 map <C-b> :BCommits<CR>
+
+" Ctrl C for Commits 
+map <C-c> :Commits<CR>
 
 " Load PHP helpers
 lua require('php_use_helper')
