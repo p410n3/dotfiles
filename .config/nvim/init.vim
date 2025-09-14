@@ -61,7 +61,12 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     " Fugitve
     Plug 'tpope/vim-fugitive'
+    " Oil
+    Plug 'stevearc/oil.nvim'
 call plug#end()
+
+" Oil again
+lua require("oil").setup()
 
 " Ctrl F for FZF
 map <C-f> :Files<CR>
