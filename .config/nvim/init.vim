@@ -1,11 +1,9 @@
-" Control Arrows for Tabs
-map <C-Right> :tabnext<CR>
-map <C-Left> :tabprevious<CR>
-
 " 1 tab = 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nowrap
+set mouse=
 
 " Line numberings
 set nu rnu
@@ -18,9 +16,6 @@ set splitbelow
 
 " Rebind Tag thingie
 nnoremap <c-G> g]
-
-" Quicker omni complete
-inoremap <C-o> <C-x><C-o>
 
 " Exclude tags from complete
 set complete-=t
@@ -35,15 +30,6 @@ set completeopt=longest,menuone
 " Use x11 clipboard
 set clipboard=unnamedplus 
 
-" Wrap long lines properly
-set nolist wrap linebreak breakat&vim
-
-" NetRW settings
-let g:netrw_banner = 0
-
-" Set filetype=html for .twig files
-autocmd BufNewFile,BufRead *.twig set filetype=html
-
 " Cooler looking popupmenu
 highlight Pmenu ctermbg=235 ctermfg=231 
 
@@ -52,7 +38,7 @@ set cursorline
 highlight CursorLine cterm=NONE ctermbg=235
 
 " Set the whole ctermbg slightly darker
-highlight Normal ctermbg=234
+highlight Normal ctermbg=200
 
 call plug#begin()
     " fzf native plugin
@@ -69,18 +55,16 @@ call plug#end()
 lua require("oil").setup()
 
 " Ctrl F for FZF
-map <C-f> :Files<CR>
+map <C-f> :FZF<CR>
 
-" Ctrl A for FZF-AG
-map <C-a> :Ag<CR>
+" Ctrl B for Buffers
+map <C-b> :Buffers<CR>
+
 " Make FZF-AG use the 'follow' option by default
 let g:fzf_ag_follow = 1
 
-" Ctrl B for Commits in Buffer
-map <C-b> :BCommits<CR>
-
-" Ctrl C for Commits 
-map <C-c> :Commits<CR>
+" Set filetype=html for .twig files
+autocmd BufNewFile,BufRead *.twig set filetype=html
 
 " Load PHP helpers
 lua require('php_use_helper')
