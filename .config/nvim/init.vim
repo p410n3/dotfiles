@@ -86,6 +86,7 @@ cnoreabbrev c Commits
 cnoreabbrev h History
 cnoreabbrev bc BCommits
 cnoreabbrev o Oil
+cnoreabbrev m Marks
  
 " Make FZF-AG use the 'follow' option by default
 let g:fzf_ag_follow = 1
